@@ -2,7 +2,7 @@
 
 ## Objective
 
-Maintain a scalable evidence-first executive research atlas. Every case becomes exactly 4 framework HTML, 4 Markdown, and 4 PDF artifacts, all generated from versioned case data. Never hand-edit generated deliverables as the source of truth.
+Maintain a scalable evidence-first executive research atlas. Start every new company with `python tools/new_case.py`, which creates a non-publishable `draft.case.json` until research approval. Every case becomes exactly 4 framework HTML, 4 Markdown, and 4 PDF artifacts, all generated from versioned case data. Never hand-edit generated deliverables as the source of truth.
 
 ## Agent discovery
 

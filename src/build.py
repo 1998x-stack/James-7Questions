@@ -16,6 +16,9 @@ def load_cases():
     return [json.loads(p.read_text('utf-8')) for p in sorted((ROOT/'cases').glob('*/case.json'))]
 
 def validate(case):
+    from jsonschema import Draft202012Validator
+    schema=json.loads((ROOT/'schemas'/'case.schema.json').read_text('utf-8'))
+    Draft202012Validator(schema).validate(case)
     required={'id','company','title','frameworks','sources','kpis','timeline','abstract','period'}
     miss=required-set(case)
     if miss: raise ValueError(f"{case.get('id','?')}: missing {sorted(miss)}")

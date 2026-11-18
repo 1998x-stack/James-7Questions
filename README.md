@@ -82,10 +82,10 @@ python -m http.server 8000 --directory docs
 
 ## 五、新增公司/业务（最重要）
 
-1. 复制 `cases/ctrip-mobile-2012-2015/case.json` 至 `cases/<your-slug>/case.json`。
-2. 替换公司与业务信息；先补充资料源，建立稳定的 `S1`/`S2` 等 `source_id`。
+1. 运行 `python tools/new_case.py --slug example-company-2027 --company "公司名" --title "新业务研究" --industry "行业" --period "2027"` 生成**未发布草稿** `draft.case.json`，不复制其他公司的事实。
+2. 研究目标公司与业务；先补充资料源，建立稳定的 `S1`/`S2` 等 `source_id`。
 3. 按固定阶段完善 `porter:5, socratic:6, james:7, dmaic:5`；每个阶段包含 `name / question / finding / evidence / caution / action`。
-4. 运行 `python src/build.py`，构建器将自动扫描所有案例并更新首页与四份报告。**不需要修改JS、CSS或复制页面模板。**
+4. 完成证据审核后，将 `draft.case.json` 重命名为 `case.json`，再运行 `python src/build.py`；生成器自动扫描正式案例并更新首页与四份报告。**不需要修改JS、CSS或复制页面模板。**
 5. 运行自动化测试；PR审核证据质量；合并后GitHub Actions构建并发布Pages。
 
 完整人工审核见 `.agent/skills/case-publishing/assets/template.md`。新增业务可指向同一公司不同时间段，例如 `ctrip-ai-trip-planning-2026`，避免把不同战略周期压在一个研究对象上。

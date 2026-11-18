@@ -39,6 +39,18 @@ class ContractTests(unittest.TestCase):
                 self.assertIn('id="app"',html)
                 self.assertIn(case['caveat'],html)
                 self.assertIn('data-idx',html)
+    def test_new_case_is_unpublished_draft(self):
+        from tempfile import TemporaryDirectory
+        sys.path.insert(0, str(ROOT))
+        from tools.new_case import create_draft
+        with TemporaryDirectory() as temp:
+            draft=create_draft('sample-business-2027','Sample Co','Future Growth','Software','2027',temp)
+            raw=json.loads(draft.read_text('utf-8'))
+            self.assertEqual(draft.name,'draft.case.json')
+            self.assertEqual(raw['status'],'草稿，禁止发布')
+            self.assertFalse(raw['sources'])
+            self.assertEqual(len(raw['frameworks']['james']['steps']),7)
+
     def test_platform_adapters(self):
         for engine in ('.agent','.pi','.claude'):
             for name in ('market-structure','socratic-audit','james-seven-questions','dmaic-execution','evidence-verification','case-publishing'):
