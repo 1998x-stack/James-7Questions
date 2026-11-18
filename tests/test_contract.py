@@ -30,7 +30,7 @@ class ContractTests(unittest.TestCase):
                 p=ROOT/'docs'/'cases'/case['id']/'downloads'/f'{method}.pdf'
                 doc=fitz.open(p)
                 self.assertGreaterEqual(doc.page_count,2,p.name)
-                self.assertIn('携程', ''.join(page.get_text() for page in doc),p.name)
+                self.assertIn(case['company'].split()[0], ''.join(page.get_text() for page in doc),p.name)
     def test_html_interactive_and_disclaimer(self):
         for case in build.load_cases():
             for method in build.METHODS:
@@ -39,6 +39,22 @@ class ContractTests(unittest.TestCase):
                 self.assertIn('id="app"',html)
                 self.assertIn(case['caveat'],html)
                 self.assertIn('data-idx',html)
+    def test_multi_case_isolation(self):
+        cases=build.load_cases()
+        if len(cases) < 2:return
+        self.assertEqual(len({case['id'] for case in cases}),len(cases))
+        for case in cases:
+            for method in build.METHODS:
+                folder=ROOT/'docs'/'cases'/case['id']
+                md=(folder/'downloads'/f'{method}.md').read_text('utf-8')
+                self.assertIn(case['title'],md)
+                self.assertIn(case['caveat'],md)
+                for other in cases:
+                    if case['id']!=other['id']:
+                        self.assertNotIn(other['title'],md)
+        index=(ROOT/'docs'/'index.html').read_text('utf-8')
+        for case in cases:self.assertIn(case['title'],index)
+
     def test_new_case_is_unpublished_draft(self):
         from tempfile import TemporaryDirectory
         sys.path.insert(0, str(ROOT))
