@@ -1,0 +1,256 @@
+{
+  "title": "Harvard Business School — Top 20 Cases Research Roadmap",
+  "status_disclaimer": "本表仅是James-7Questions项目的研究优先级，不是HBS官方排行榜；案例版权归各出版方，本站只做原创公开资料研究。",
+  "selection_criteria": [
+    "可追踪的HBS/HBR官方案例出版记录",
+    "四方法框架可解析的经营问题",
+    "一手财报/同期公开材料可核验",
+    "可形成多业务、多行业的横向比较"
+  ],
+  "phases": {
+    "1": "平台与实证实验（01—03）",
+    "2": "战略转型与商业生态（04—07）",
+    "3": "经营系统与新技术（08—12）",
+    "4": "品牌、组织与渠道（13—20）"
+  },
+  "sources": [
+    {
+      "title": "HBR HBS Case Selections",
+      "url": "https://hbr.org/case-selections"
+    },
+    {
+      "title": "HBR Store HBS Case Catalog",
+      "url": "https://store.hbr.org/case-studies/"
+    },
+    {
+      "title": "Booking.com Case #619015",
+      "url": "https://store.hbr.org/product/booking-com/619015"
+    },
+    {
+      "title": "ZARA: Fast Fashion #703497",
+      "url": "https://store.hbr.org/product/zara-fast-fashion/703497"
+    }
+  ],
+  "cases": [
+    {
+      "title": "Booking.com",
+      "company": "Booking.com",
+      "year": 2018,
+      "focus": "组织化随机实验、双边平台与因果识别",
+      "phase": 1,
+      "case_url": "https://store.hbr.org/product/booking-com/619015",
+      "case_id": "booking-experimentation-2017-2019",
+      "status": "published",
+      "priority": 1
+    },
+    {
+      "title": "ZARA: Fast Fashion",
+      "company": "ZARA / Inditex",
+      "year": 2003,
+      "focus": "快速供应链、垂直整合与国际扩张",
+      "phase": 1,
+      "case_url": "https://store.hbr.org/product/zara-fast-fashion/703497",
+      "case_id": null,
+      "status": "planned",
+      "priority": 2
+    },
+    {
+      "title": "Innovation at Uber: The Launch of Express POOL",
+      "company": "Uber",
+      "year": 2018,
+      "focus": "拼车机制、市场设计、产品实验",
+      "phase": 1,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 3
+    },
+    {
+      "title": "The Turnaround at Ford Motor Company",
+      "company": "Ford",
+      "year": 2021,
+      "focus": "企业转型、跨部门合作与执行纪律",
+      "phase": 2,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 4
+    },
+    {
+      "title": "Apple Inc. in 2012",
+      "company": "Apple",
+      "year": 2012,
+      "focus": "创始人继任、产品生态与持续创新",
+      "phase": 2,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 5
+    },
+    {
+      "title": "Mercado Libre: The Best Is Yet to Come",
+      "company": "Mercado Libre",
+      "year": 2025,
+      "focus": "电商、支付、物流平台之间的协同",
+      "phase": 2,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 6
+    },
+    {
+      "title": "Tencent",
+      "company": "腾讯",
+      "year": 2017,
+      "focus": "数字生态、竞争优势与产品执行",
+      "phase": 2,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 7
+    },
+    {
+      "title": "Walmart's Ten-Year Investment in the Frontline",
+      "company": "Walmart",
+      "year": 2025,
+      "focus": "一线员工投资、生产率与客户体验",
+      "phase": 3,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 8
+    },
+    {
+      "title": "Building Resiliency in McDonald's Supply Chain",
+      "company": "McDonald’s",
+      "year": 2023,
+      "focus": "供应链韧性、成本与扩张",
+      "phase": 3,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 9
+    },
+    {
+      "title": "Copilot(s): Generative AI at Microsoft and GitHub",
+      "company": "Microsoft / GitHub",
+      "year": 2023,
+      "focus": "生成式AI分发、风险控制与生态策略",
+      "phase": 3,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 10
+    },
+    {
+      "title": "Silicon Valley Bank: Gone in 36 Hours",
+      "company": "Silicon Valley Bank",
+      "year": 2025,
+      "focus": "资产负债错配、流动性与治理",
+      "phase": 3,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 11
+    },
+    {
+      "title": "Racial Discrimination on Airbnb (A)",
+      "company": "Airbnb",
+      "year": 2020,
+      "focus": "平台偏差、实验盲区与公平性",
+      "phase": 3,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 12
+    },
+    {
+      "title": "Shake Shack's Playbook for the Digital Era",
+      "company": "Shake Shack",
+      "year": 2025,
+      "focus": "效率自动化与品牌服务体验",
+      "phase": 4,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 13
+    },
+    {
+      "title": "Barbie: Reviving a Cultural Icon at Mattel (Abridged)",
+      "company": "Mattel / Barbie",
+      "year": 2024,
+      "focus": "IP品牌增长与生态化商业模式",
+      "phase": 4,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 14
+    },
+    {
+      "title": "Huawei and the U.S.-China Trade War",
+      "company": "华为",
+      "year": 2019,
+      "focus": "地缘政治、关键技术与供应链风险",
+      "phase": 4,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 15
+    },
+    {
+      "title": "Urban Company",
+      "company": "Urban Company",
+      "year": 2022,
+      "focus": "服务提供者培训、平台质量治理",
+      "phase": 4,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 16
+    },
+    {
+      "title": "Porsche",
+      "company": "Porsche",
+      "year": 2024,
+      "focus": "高端品牌差异化与新技术竞争",
+      "phase": 4,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 17
+    },
+    {
+      "title": "Keurig: A Return to Growth",
+      "company": "Keurig",
+      "year": 2024,
+      "focus": "经营修复之后的增长选项评估",
+      "phase": 4,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 18
+    },
+    {
+      "title": "Revlon India's Turnaround: Navigating Online-Offline Decisions Using a Balanced Scorecard",
+      "company": "Revlon India",
+      "year": 2024,
+      "focus": "线上线下冲突、战略地图与平衡计分卡",
+      "phase": 4,
+      "case_url": "https://hbr.org/case-selections",
+      "case_id": null,
+      "status": "planned",
+      "priority": 19
+    },
+    {
+      "title": "Google's Project Oxygen: Do Managers Matter?",
+      "company": "Google",
+      "year": 2013,
+      "focus": "管理者绩效、组织设计与证据质量",
+      "phase": 4,
+      "case_url": "https://store.hbr.org/case-studies/",
+      "case_id": null,
+      "status": "planned",
+      "priority": 20
+    }
+  ]
+}

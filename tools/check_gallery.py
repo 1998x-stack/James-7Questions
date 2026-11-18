@@ -19,9 +19,10 @@ async def main():
             page.on('pageerror',lambda e:errors.append(str(e)))
             await load(page,DOCS/'index.html')
             await page.screenshot(path=str(DOCS/f'_gallery_{device}.png'),full_page=True)
-            assert await page.locator('.gallery-card').count()==2
-            assert await page.locator('.gallery-card[href$="/index.html"]').count()==2
-            assert await page.locator('.gallery-count').inner_text()=='当前显示 2 / 2 个案例'
+            count=len(list((ROOT/'cases').glob('*/case.json')))
+            assert await page.locator('.gallery-card').count()==count
+            assert await page.locator('.gallery-card[href$="/index.html"]').count()==count
+            assert await page.locator('.gallery-count').inner_text()==f'当前显示 {count} / {count} 个案例'
             await page.locator('#search').fill('美团')
             assert await page.locator('.gallery-card:visible').count()==1
             casehref=await page.locator('.gallery-card:visible').get_attribute('href')
@@ -37,7 +38,7 @@ async def main():
             assert (await page.locator('#pagerstate').inner_text()).startswith('2 /')
             await load(page,DOCS/'index.html')
             scroll=await page.evaluate('document.documentElement.scrollWidth')
-            print(device,'gallery cards: 2; overview lenses: 4; browser overflow:',scroll-width,'errors:',errors)
+            print(device,f'gallery cards: {count}; overview lenses: 4; browser overflow:',scroll-width,'errors:',errors)
             assert scroll<=width+2,(device,scroll,width)
             assert not errors,errors
             await page.close()

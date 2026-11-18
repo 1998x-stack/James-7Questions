@@ -36,6 +36,23 @@
 
 **数据审计提醒：** 2013年约50%、2014年约60%的团购份额以及2014年460亿元交易额均源于公司管理层采访；CNNIC的2014年56.6%为**品牌渗透率**，不是交易额市占率；不可互换。
 
+
+## HBS Top 20 研究系列（2026年11月启动）
+
+- [HBS Top 20研究路线图](research/hbs-top20.md) · [网站路线图](https://1998x-stack.github.io/James-7Questions/hbs-roadmap.html)
+- 首例：[Booking.com实验文化与经营竞争（2017—2019）](cases/booking-experimentation-2017-2019/case.json)；HBS原案 #619015，已完成11条资料来源、23个分析节点、案例总览、4 HTML、4 Markdown、4 PDF。
+- 其余19例作为**选题池**展示，不作为已研究完成的成果；所有链接到HBS公开案例目录，原案例正文需合法购买。
+- 每新增正式案例，运行六段研究结构审计：
+
+```bash
+for skill in evidence-verification market-structure socratic-audit james-seven-questions dmaic-execution case-publishing; do
+  python tools/skill_pipeline.py --case booking-experimentation-2017-2019 --skill "$skill"
+done
+python tools/check_gallery.py
+```
+
+`tools/skill_pipeline.py` 记录结构化审计结果到 `research/audits/<slug>.json`，**仅能检查字段、证据ID和输出完整性，不能替代真人对来源真实性、研究内容、因果推断及版权的审阅**。静态Pages构建不会自动下载HBS付费案例。
+
 ## 三、仓库结构
 
 ```text

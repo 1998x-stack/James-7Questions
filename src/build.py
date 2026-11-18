@@ -121,6 +121,39 @@ def pdf_report(case, method, path):
         c.saveState();c.setFillColor(muted);c.setFont('STSong-Light',8);c.drawString(48,32,'DECISION ATLAS  /  CASE RESEARCH');c.drawRightString(A4[0]-48,32,str(d.page));c.setStrokeColor(line);c.line(47,44,A4[0]-47,44);c.restoreState()
     doc.build(flow,onFirstPage=paginate,onLaterPages=paginate)
 
+def roadmap_document(plan, css):
+    """Build a standalone no-dependency HBS research roadmap page."""
+    sections=[]
+    for phase, heading in plan['phases'].items():
+        group=[x for x in plan['cases'] if str(x['phase']) == phase]
+        cards=[]
+        for x in group:
+            rel=('cases/'+x['case_id']+'/index.html') if x['status']=='published' else x['case_url']
+            external='' if x['status']=='published' else ' target="_blank" rel="noopener noreferrer"'
+            state='已发布完整研究' if x['status']=='published' else '待研究 · 查看HBS案例目录'
+            cards.append(f'<a class="roadmap-card" href="{html.escape(rel,quote=True)}"{external}><span class="roadmap-no">{x["priority"]:02}</span><div><span class="roadmap-meta">{html.escape(x["company"])} · HBS {x["year"]}</span><h3>{html.escape(x["title"])}</h3><p>{html.escape(x["focus"])}</p><span class="roadmap-status {"done" if x["status"]=="published" else ""}">{state} ↗</span></div></a>')
+        sections.append(f'<section class="roadmap-section"><div class="section-head"><div><div class="eyebrow">BATCH 0{phase}</div><h2>{html.escape(heading)}</h2></div><span class="pill">{len(group)} 案例</span></div><div class="roadmap-grid">{"".join(cards)}</div></section>')
+    style='''
+    .roadmap-header{padding:47px 0 29px;border-bottom:1px solid #e2eaf1;margin-bottom:22px}
+    .roadmap-header h1{font-size:clamp(32px,4vw,52px);line-height:1.12;letter-spacing:-1.6px;margin:14px 0}
+    .roadmap-header p{max-width:830px;font-size:16px;color:#5d6d7f;line-height:1.95}
+    .roadmap-toplinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+    .roadmap-section{margin:38px 0}
+    .roadmap-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+    .roadmap-card{display:flex;gap:19px;background:#fff;border:1px solid #dfebf1;border-radius:16px;padding:22px;color:#172c41;text-decoration:none;box-shadow:0 6px 18px rgba(20,55,85,.025);transition:transform .17s,border-color .17s}
+    .roadmap-card:hover{border-color:#729bc6;transform:translateY(-2px)}
+    .roadmap-no{font-size:26px;font-weight:720;letter-spacing:-1px;color:#397cbd}
+    .roadmap-meta{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:#687f91}
+    .roadmap-card h3{font-size:17px;line-height:1.45;margin:8px 0}
+    .roadmap-card p{font-size:13px;color:#657789;line-height:1.65;margin:0 0 12px}
+    .roadmap-status{font-size:12px;font-weight:650;color:#52728e}
+    .roadmap-status.done{color:#137d66}
+    .roadmap-ethics{padding:20px;border:1px solid #d9e6ef;border-radius:13px;background:#f6fafc;line-height:1.8;color:#5b6f83;font-size:13px}
+    .roadmap-ethics strong{color:#183c57}
+    @media(max-width:900px){.roadmap-grid{grid-template-columns:1fr}.roadmap-header{padding:32px 0 21px}.roadmap-card{padding:17px}}
+    '''
+    return f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="HBS案例Top20研究路线图与已发布报告"><title>HBS Top 20 · Decision Atlas</title><style>{css}{style}</style></head><body><main style="max-width:1190px;margin:auto;padding:clamp(20px,4vw,55px)"><div class="eyebrow">DECISION ATLAS / RESEARCH BACKLOG</div><div class="roadmap-toplinks"><a class="secondary-link" href="index.html">← 返回案例 Gallery</a><a class="secondary-link" href="https://hbr.org/case-selections" target="_blank" rel="noopener noreferrer">HBS官方案例专题 ↗</a></div><header class="roadmap-header"><div class="eyebrow">20 VERIFIED CASE TITLES · 4 RESEARCH BATCHES</div><h1>HBS Top 20<br><em>企业战略研究路线</em></h1><p>案例真实可核验；排序为本项目编辑选择，不是哈佛官方热度榜。已发布的案例进入完整研究总览；待研究案例仅链接至出版目录，不假装有完整结论。</p><div class="roadmap-ethics"><strong>研究与版权说明：</strong>本站对HBS教学案例做独立公开资料研究，不复制付费案例正文、教学笔记或专有图表。每个新案例需完成证据审查、五力、苏格拉底式追问、James七问及DMAIC映射后才会被标记为已发布。</div></header>{''.join(sections)}<div class="footer">Copyright belongs to the original case authors and publishers. Research analyses are independently written. · <a href="index.html">Case Gallery ↗</a></div></main></body></html>'''
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--no-pdf',action='store_true');args=parser.parse_args();cases=load_cases()
     if not cases:raise SystemExit('No cases in cases/*/case.json')
@@ -136,6 +169,10 @@ def main():
             write(folder/'downloads'/f'{method}.md',markdown_report(case,method))
             if not args.no_pdf:pdf_report(case,method,folder/'downloads'/f'{method}.pdf')
         write(folder/'metadata.json',json.dumps({k:case[k] for k in ['id','title','period','industry','status','caveat']},ensure_ascii=False,indent=2)+'\n')
+    roadmap_path=ROOT/'research'/'hbs-top20.json'
+    if roadmap_path.exists():
+        plan=json.loads(roadmap_path.read_text('utf-8'))
+        write(DOCS/'hbs-roadmap.html',roadmap_document(plan,css))
     write(DOCS/'.nojekyll','')
     print(f'Generated {len(cases)} case(s), {len(cases)} case-overview HTML, {len(cases)*4} framework HTML, {len(cases)*4} Markdown, '+('0' if args.no_pdf else str(len(cases)*4))+' PDF')
 if __name__=='__main__':main()

@@ -1,0 +1,481 @@
+{
+  "schema_version": "1.0.0",
+  "id": "booking-experimentation-2017-2019",
+  "company": "Booking.com / 缤客",
+  "title": "Booking.com：把实验文化变成竞争能力",
+  "subtitle": "HBS教学案例 #619015 的独立公开资料复盘：2017—2019年住宿平台的因果实验、组织与增长边界",
+  "period": "2017—2019",
+  "industry": "在线旅游 / 住宿预订平台 / 实验组织",
+  "tags": [
+    "Harvard Business School",
+    "HBS #619015",
+    "A/B Test",
+    "双边平台",
+    "实验文化",
+    "经营增长"
+  ],
+  "status": "公开可核验案例｜HBS #619015｜原始收费教材未复制",
+  "abstract": "2018年10月，哈佛商学院以Booking.com的线上实验和创新管理为主题推出案例619015。公开材料显示，Booking.com技术团队用随机对照与CUPED辅助产品决策；2017年一个挑战既有首页的方案后来成为管理学讨论的实例。同一时期，Booking Holdings集团2018年预订间夜达7.60亿，同比增长12.9%，同时对绩效营销渠道投入44.47亿美元。研究通过五力、苏格拉底式追问、James七问及事后DMAIC，考察实验学习机制的价值及边界，避免将集团增长全部归因于实验数量。",
+  "thesis": "可规模化的随机实验是一种组织学习能力而非孤立技术：它可以通过缩短假设—测量—改进周期提升产品决策质量，但只有与供给、客户关系、营销效率和长期净价值管理协同才能成为可持续竞争力。",
+  "decision": "优先投资“可信实验基础设施 + 清晰决策权 + 长期价值守护指标”，对高风险或长期性战略选择另外运用市场结构研究与非实验方法。不要为提高试验次数牺牲统计质量、用户信任或酒店伙伴利益。",
+  "caveat": "本报告以HBS原始案例的公开目录、企业SEC披露及公开一手技术文章独立重建，未获取、复制或转述付费案例正文。HBR 2020年提及约25,000次年度测试，不能等同2018年的审计指标；2018年760百万间夜、44.47亿美元绩效营销均属Booking Holdings集团，非Booking.com品牌单独贡献。Expedia已入住间夜与Booking已预订间夜不可直接比较。实验治理与具体绩效的长期因果贡献未被公开识别。James七问为研究重建，DMAIC仅为事后方法映射，非内部正式六西格玛记录。",
+  "kpis": [
+    {
+      "label": "HBS 案例编号",
+      "value": "619015",
+      "note": "2018年10月15日；HBS教学案例28页；此处仅引用公开书目信息",
+      "source": "S1"
+    },
+    {
+      "label": "2018集团预订间夜",
+      "value": "7.60亿",
+      "note": "Booking Holdings集团，预订间夜，不等于入住间夜或单一Booking.com品牌",
+      "source": "S2"
+    },
+    {
+      "label": "2018集团间夜增长",
+      "value": "+12.9%",
+      "note": "2017年6.73亿 → 2018年7.60亿；多驱动因素，不能单因归结为实验",
+      "source": "S2"
+    },
+    {
+      "label": "2018集团绩效营销",
+      "value": "44.47亿美元",
+      "note": "主要采购搜索、元搜索与联盟流量；非Booking.com品牌单独费用",
+      "source": "S2"
+    },
+    {
+      "label": "年度实验规模（后续披露）",
+      "value": "约25,000次/年",
+      "note": "HBR 2020年作者描述的规模估计，非2018年财报审计指标",
+      "source": "S3"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2017年",
+      "title": "产品实验基础进入成熟讨论",
+      "text": "Booking.com团队已广泛使用A/B试验；一项挑战原有首页设计的方案被提出。",
+      "source": "S3"
+    },
+    {
+      "date": "2018年1月22日",
+      "title": "发布实验统计工程实践",
+      "text": "Booking.com技术团队公开CUPED与A/B测试方差缩减的使用逻辑。",
+      "source": "S4"
+    },
+    {
+      "date": "2018年10月15日",
+      "title": "HBS出版Booking.com案例",
+      "text": "Stefan Thomke与Daniela Beyersdorfer的案例619015讨论实验如何影响数字体验与创新管理。",
+      "source": "S1"
+    },
+    {
+      "date": "2018年全年",
+      "title": "规模扩张与营销并存",
+      "text": "Booking Holdings集团760百万预订间夜、绩效营销约44.47亿美元；增长因素包括供给、营销及在线化。",
+      "source": "S2"
+    },
+    {
+      "date": "2019年3月31日",
+      "title": "供给规模披露",
+      "text": "集团公告Booking.com上有约229万家可直接预订酒店及其他住宿设施，单位并非客房数。",
+      "source": "S11"
+    },
+    {
+      "date": "2019年",
+      "title": "HBS Working Knowledge总结实验组织",
+      "text": "讨论随机对照、对结果的遵从及员工广泛参与。",
+      "source": "S7"
+    },
+    {
+      "date": "2020年3月",
+      "title": "HBR阐述实验文化",
+      "text": "Thomke发表Building a Culture of Experimentation，提及每年约2.5万测试及组织文化原则。",
+      "source": "S3"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Harvard Business Publishing: Booking.com (HBS Case 619015)",
+      "url": "https://store.hbr.org/product/booking-com/619015",
+      "type": "primary",
+      "year": 2018,
+      "note": "HBS 原始教学案例编号619015、作者Stefan Thomke和Daniela Beyersdorfer、2018-10-15出版；内容聚焦实验文化、流程和创新管理，仅使用公开简介。"
+    },
+    {
+      "id": "S2",
+      "title": "Booking Holdings 2018 Form 10-K (SEC)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1075531/000107553119000009/bkng1231201810k.htm",
+      "type": "primary",
+      "year": 2019,
+      "note": "集团2018年预订间夜760百万，2017年673百万，同比12.9%；2018绩效营销费用44.47亿美元、品牌营销5.09亿美元。集团口径，不是Booking.com独立指标。"
+    },
+    {
+      "id": "S3",
+      "title": "Stefan Thomke: Building a Culture of Experimentation, HBR",
+      "url": "https://hbr.org/2020/03/building-a-culture-of-experimentation",
+      "type": "attributed-firsthand",
+      "year": 2020,
+      "note": "作者2017年新首页挑战案例和实验治理文化；2020年文章估计每年约2.5万实验，是后续期间描述，不得标为2018审计数据。"
+    },
+    {
+      "id": "S4",
+      "title": "Booking.com ML & DS Blog: How Booking.com increases the power of online experiments with CUPED",
+      "url": "https://booking.ai/how-booking-com-increases-the-power-of-online-experiments-with-cuped-995d186fff1d",
+      "type": "attributed-firsthand",
+      "year": 2018,
+      "note": "2018年1月技术团队的一手材料：团队可自主进行A/B试验，对照组/试验组、统计误差和CUPED提升检验功效。"
+    },
+    {
+      "id": "S5",
+      "title": "Expedia Group Reports Q4 and Full Year 2018 Results (SEC)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1324424/000132442419000004/earningsrelease-q42018.htm",
+      "type": "primary",
+      "year": 2019,
+      "note": "2018年Expedia集团gross bookings 997亿美元、营业收入112亿美元、已入住间夜约3.516亿；已入住与Booking集团预订间夜定义不同，不可直接算市场份额。"
+    },
+    {
+      "id": "S6",
+      "title": "Expedia 2018 Form 10-K: competitive landscape (SEC)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1324424/000132442419000006/q42018-10k.htm",
+      "type": "primary",
+      "year": 2019,
+      "note": "OTA同行、Google旅游搜索、元搜索、酒店直销、替代住宿均构成竞争；来自竞争者自身风险披露。"
+    },
+    {
+      "id": "S7",
+      "title": "Harvard Business School Working Knowledge: Creating the Experimentation Organization",
+      "url": "https://www.library.hbs.edu/working-knowledge/creating-the-experimentation-organization",
+      "type": "secondary",
+      "year": 2019,
+      "note": "HBS对Thomke研究的解释：随机对照、严格假设、结果约束，部分公司案例描述75%核心人员参与实验；属于作者报告，不作为审计人事数据。"
+    },
+    {
+      "id": "S8",
+      "title": "Joseph Levin at Booking.com: Are You Proving Yourself Wrong? (UXDX)",
+      "url": "https://uxdx.com/session/are-you-proving-yourself-wrong/",
+      "type": "attributed-firsthand",
+      "year": 2020,
+      "note": "Booking.com前端工程负责人回忆2017年35个跨职能团队支持产品体验工作；强调实验数据仍需人作价值与业务判断。"
+    },
+    {
+      "id": "S9",
+      "title": "The Five Forces, Institute for Strategy and Competitiveness, HBS",
+      "url": "https://www.isc.hbs.edu/strategy/business-strategy/Pages/the-five-forces.aspx",
+      "type": "method",
+      "year": 2026,
+      "note": "波特五力的行业结构与盈利能力理论依据；五力的具体强弱判断为本研究假设。"
+    },
+    {
+      "id": "S10",
+      "title": "DMAIC process, American Society for Quality",
+      "url": "https://asq.org/quality-resources/dmaic",
+      "type": "method",
+      "year": 2026,
+      "note": "DMAIC针对现有流程改进；本报告为事后方法映射，并非正式六西格玛内部项目。"
+    },
+    {
+      "id": "S11",
+      "title": "Booking Holdings 2019 Proxy Statement (SEC)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1075531/000130817919000158/lbkng2019_def14a.htm",
+      "type": "primary",
+      "year": 2019,
+      "note": "2018年Bookng.com新增约59万个房源设施；截至2019年3月31日可直接预订的住宿物业约229万家。需与全球房间库存区别。"
+    }
+  ],
+  "frameworks": {
+    "porter": {
+      "title": "波特五力：住宿平台的结构性竞争",
+      "subtitle": "实验能力能否突破流量与供给双边约束？",
+      "decision": "用供给可用性、流量依赖、用户转换成本与净长期价值审查实验价值，不用不兼容的间夜指标拼凑市占率。",
+      "steps": [
+        {
+          "name": "现有竞争强度",
+          "question": "与Expedia、区域OTA争夺同一批用户和住宿供给时，价格之外还能如何竞争？",
+          "finding": "Booking.com与Expedia等OTA在搜索效率、酒店供给、流量采购和交易服务上竞争。Expedia 2018年申报同时列明Google旅游搜索和区域OTA压力；实验体系是改进转化与体验的一种机制。",
+          "evidence": [
+            "S6",
+            "S1",
+            "S4"
+          ],
+          "caution": "Expedia已入住间夜和Booking集团已预订间夜不同，不能以351.6/760推算市场份额或竞争胜负。",
+          "action": "按相同地域、渠道、客群和订单状态对齐后，再比较转化、重复预订、取消与有效客户终身价值。"
+        },
+        {
+          "name": "新进入者威胁",
+          "question": "技术上可以建一个预订网站，为什么难以迅速复制Booking.com的表现？",
+          "finding": "入场者需要获取住宿供给、消费者信任、营销流量与交易可靠性；不断实验改善运营决策，但不自动保证稳固壁垒。",
+          "evidence": [
+            "S1",
+            "S2",
+            "S6"
+          ],
+          "caution": "技术实验平台只是潜在能力，不是法律排他壁垒；新流量入口可能降低现有OTA优势。",
+          "action": "拆解进入成本为供给接入、认证及内容、获客、客服履约和实验治理五项。"
+        },
+        {
+          "name": "替代品威胁",
+          "question": "消费者一定要通过OTA订酒店吗？",
+          "finding": "酒店与连锁集团官网、搜索平台直订、旅游元搜索、替代性住宿均可能改写消费者的购买路径；Expedia在正式风险披露中认可这些替代压力。",
+          "evidence": [
+            "S6",
+            "S2"
+          ],
+          "caution": "替代关系的强弱因国家、酒店档次和客群变化，不能用单一全球平均数衡量。",
+          "action": "分别研究直订、短租、搜索转介对预订转化、获客成本及复购的影响。"
+        },
+        {
+          "name": "供应商议价能力",
+          "question": "平台实验提高用户转化，是否必然提升酒店合作收益？",
+          "finding": "双边平台需要同时改善住宿供给的可展示性、可用房量和订单质量。Booking.com 2018年持续扩充住宿设施选择，供给质量与实验能力一起影响用户体验。",
+          "evidence": [
+            "S11",
+            "S1"
+          ],
+          "caution": "新增加设施数不能替代有效库存或酒店净收益；流量排序可能造成酒店和平台利益分配冲突。",
+          "action": "引入酒店净收益、取消率、房态准确度及公平展示的守护指标。"
+        },
+        {
+          "name": "购买者议价能力",
+          "question": "用户能轻松比价和切换平台时，什么可以减少对付费流量的依赖？",
+          "finding": "可用供给、可理解的页面、转化体验与信任度影响选择；Booking集团2018年绩效营销44.47亿美元，显示渠道依赖仍然显著。",
+          "evidence": [
+            "S2",
+            "S4"
+          ],
+          "caution": "不能因为测试量大就认为获客成本低或具有忠诚度优势；营销费用是集团口径。",
+          "action": "同时优化直达流量、重复购买和支付后完整订单价值，并按获客渠道分组实验。"
+        }
+      ]
+    },
+    "socratic": {
+      "title": "苏格拉底式追问：实验数量是否等于增长？",
+      "subtitle": "用定义、证据、替代解释与可证伪条件检验成功叙事",
+      "decision": "不能直接把2020年实验频次解释为2018年集团增长原因；应优先审查实验质量与长期净效应。",
+      "steps": [
+        {
+          "name": "提出可反驳的命题",
+          "question": "“Booking.com因为做了2.5万次实验，所以2018年间夜增长12.9%”，这个说法能直接成立吗？",
+          "finding": "HBR文章确有2020年前后的每年约2.5万次测试描述，SEC则披露2018年集团间夜增长12.9%；二者分别来自不同时间、组织范围及指标。",
+          "evidence": [
+            "S2",
+            "S3"
+          ],
+          "caution": "没有建立实验频率与增长率的因果识别；时间及公司与集团口径均不一致。",
+          "action": "改写为假设：高质量随机实验减少错误产品决策，并可能提高长期净预订价值。"
+        },
+        {
+          "name": "厘清概念和口径",
+          "question": "“实验次数”“转化率”“成功”分别意味着什么？",
+          "finding": "A/B实验需要对照/试验组、随机分流、预先指标与错误率控制。有效业务收益还应扣除取消、退款和后续客户价值变化。",
+          "evidence": [
+            "S4",
+            "S7",
+            "S2"
+          ],
+          "caution": "实验次数不是效果数量；Booking集团间夜及营销指标不能当作单站点、单实验KPI。",
+          "action": "建立实验定义字典：暴露人数、成交、已入住、取消、客户净价值，明确观察窗口。"
+        },
+        {
+          "name": "审查证据力度",
+          "question": "有什么一手资料证明实验真正进入业务决策？",
+          "finding": "2018年Booking.com技术博客描述产品团队使用A/B实验及CUPED统计方法；HBS原案例聚焦试验治理；2017年新首页提案后来被Thomke用作管理挑战示例。",
+          "evidence": [
+            "S4",
+            "S1",
+            "S3"
+          ],
+          "caution": "博客与案例说明机制存在，不提供所有实验的增量利润、失败率和复现率。",
+          "action": "选择可公开或内部合规分享的实验台账，按发布/回滚、净指标方向和统计功效审计。"
+        },
+        {
+          "name": "提出替代解释",
+          "question": "除了实验，2017—2018年集团业务增长还可能源自哪里？",
+          "finding": "2018年10-K明确将增长与供给扩张、营销、在线旅游趋势、消费者体验改善和取消率下降共同关联，排除了“仅靠实验”的单因解释。",
+          "evidence": [
+            "S2",
+            "S11"
+          ],
+          "caution": "公开披露不提供各因素边际贡献，更不支持以2018年成长证明实验为唯一原因。",
+          "action": "搭建增长归因分解，并用市场-渠道-品类的同期对照与归因实验验证。"
+        },
+        {
+          "name": "挑战负面外部性",
+          "question": "如果实验让短期点击和转化提升，是否必然对用户、酒店和长期品牌有利？",
+          "finding": "负责人公开提出，即便实验数据丰富，仍需判断改动是否真正对用户、业务和住宿合作伙伴有利；单一转化最大化可能背离长期利益。",
+          "evidence": [
+            "S8",
+            "S7"
+          ],
+          "caution": "目前缺少可完整审查的隐私、消费者体验及商户公平实验制度文档。",
+          "action": "设置消费者投诉、预订取消、合作伙伴净收益、数据保护等guardrail，并禁止以短期转化覆盖合规风险。"
+        },
+        {
+          "name": "设定可推翻条件",
+          "question": "出现什么结果时，我们必须否定“更多测试必然带来更好结果”？",
+          "finding": "若预先设定的净预订价值未提升、重复实验不可复现、A/A检验异常、持续实验导致指标过度波动，简单堆量策略应被否定。",
+          "evidence": [
+            "S4",
+            "S7"
+          ],
+          "caution": "这是研究者设计的证伪标准，并非Booking.com披露的正式停止规则。",
+          "action": "规定试验最小可检测效应、停机阈值、分组公平审计和长期复盘，不以测试数作为唯一目标。"
+        }
+      ]
+    },
+    "james": {
+      "title": "James 七连问：实验驱动的业务决策",
+      "subtitle": "研究重建七阶段，不代表梁建章或Booking.com有官方固定七问",
+      "decision": "将市场边界、规模、竞争、因果、杠杆、反证和90天验证连成一条可审计决策链。",
+      "steps": [
+        {
+          "name": "市场边界",
+          "question": "Booking.com实际竞争的是“酒店列表展示”还是“住宿需求到可履约订单”？",
+          "finding": "核心市场可定义为住宿预订撮合平台；跨地域竞争含OTA、住宿直销、元搜索及替代住宿，须兼顾旅客与酒店两端。",
+          "evidence": [
+            "S1",
+            "S6"
+          ],
+          "caution": "本定义是研究框架，不等于任何监管机关在特定案件中的相关市场划分。",
+          "action": "按国家、订单与入住状态、客群和住宿类型定义可比较的子市场。"
+        },
+        {
+          "name": "规模及增长",
+          "question": "2018年的增长有多大，规模来源是什么？",
+          "finding": "Booking Holdings集团2017年预订间夜673百万，2018年760百万，同比增长12.9%；费用和供给规模也同步增长。",
+          "evidence": [
+            "S2",
+            "S11"
+          ],
+          "caution": "集团预订间夜非Booking.com单品牌订单；与Expedia已入住间夜或收入口径不可直接合并。",
+          "action": "测算各市场净间夜、订单价值与利润池，区分自然需求增长、营销投入和转化改善。"
+        },
+        {
+          "name": "竞争格局",
+          "question": "竞品、酒店集团和搜索入口都掌握什么权力？",
+          "finding": "Expedia同业竞争强劲，搜索与元搜索影响流量分发，酒店与替代住宿提供供给，用户有多平台比价选项。",
+          "evidence": [
+            "S6",
+            "S2"
+          ],
+          "caution": "不能以两个集团的跨定义指标计算所谓全球OTA市场份额。",
+          "action": "设计竞争地图：用户入口、渠道成本、可订供给与交易履约五维。"
+        },
+        {
+          "name": "因果机制",
+          "question": "为何一个高频实验体系可能成为增长机制？",
+          "finding": "Booking.com技术团队使用随机对照与CUPED减少估计噪声，赋予产品团队验证假设的能力；这可缩短从意见到证据的学习路径。",
+          "evidence": [
+            "S4",
+            "S7",
+            "S3"
+          ],
+          "caution": "能降低局部决策失误，不等于可以量化解释集团增长；试验之间可能相互干扰。",
+          "action": "把“发布次数”变成“经复验的净长期价值提升/决策周期”的有效学习速度。"
+        },
+        {
+          "name": "战略杠杆",
+          "question": "如果只能投一笔资金，先买流量、扩供给，还是提升实验基础设施？",
+          "finding": "2018年集团绩效营销费用44.47亿美元且依赖搜索渠道；实验有机会提高每次流量的净价值，但同时需要有效供给支持。",
+          "evidence": [
+            "S2",
+            "S4",
+            "S11"
+          ],
+          "caution": "最优投资方向受具体市场瓶颈限制，公开材料不足以给出真实ROI排序。",
+          "action": "为流量、供给、实验工程三个选项建立可比较的增量净利润/投资额和风险区间。"
+        },
+        {
+          "name": "反证与约束",
+          "question": "怎样证明“实验文化”不只是漂亮的管理故事？",
+          "finding": "必须审查试验功效、选择性报告、重复检验、跨试验干扰和对消费者/酒店的长期外部影响；作者本人提出伦理与管理文化条件。",
+          "evidence": [
+            "S3",
+            "S8",
+            "S4"
+          ],
+          "caution": "HBS教材的教学价值与公司实际经营成效不是同一个问题，不能复制未购买的案例正文。",
+          "action": "设置预注册、A/A健康检查、复现审核和商户/用户合规红线；查找失败试验样本。"
+        },
+        {
+          "name": "行动与验证",
+          "question": "经营者下一季度如何验证实验文化对利润与客户价值是否有贡献？",
+          "finding": "将高质量实验作为决策制度而非KPI数量竞赛，先从需求明确、样本充分、可复现的产品体验问题试点。",
+          "evidence": [
+            "S4",
+            "S7",
+            "S2"
+          ],
+          "caution": "下述90天试点为研究建议，非Booking.com在2018年曾使用的正式计划。",
+          "action": "30天建指标字典与A/A检测；30天在统一客群分流开展5—10个有功效设计的实验；30天复验长期净价值与用户/商户guardrails。"
+        }
+      ]
+    },
+    "dmaic": {
+      "title": "DMAIC：把实验能力变为可持续改进系统",
+      "subtitle": "事后方法映射，不是Booking.com正式六西格玛记录",
+      "decision": "从搜索—预订流程定义CTQ，建设随机化、统计功效、护栏指标、复验和回滚机制。",
+      "steps": [
+        {
+          "name": "Define 定义",
+          "question": "应将哪一个现有预订体验流程作为改进对象？",
+          "finding": "将搜索展示→选房→预订完成→可入住订单作为流程，以不同地区/设备/住宿品类切片，定位存在证据的用户障碍。",
+          "evidence": [
+            "S1",
+            "S4"
+          ],
+          "caution": "这是基于公开资料设计的DMAIC应用样板，未发现2018年Booking.com正式DMAIC项目章程。",
+          "action": "创建项目章程：改善有效预订净价值；CTQ为可完成交易、取消率、客户满意度及酒店合作反馈。"
+        },
+        {
+          "name": "Measure 测量",
+          "question": "如何确保实验结果真实有效，而不是噪声或口径漂移？",
+          "finding": "2018年技术博客解释实验的对照/处理组和CUPED方差缩减；适用于提高敏感度而非凭空创造效果。",
+          "evidence": [
+            "S4"
+          ],
+          "caution": "未公开可复核的原始分流日志、完整样本量、统计功效、A/A假阳性率和实验总账。",
+          "action": "定义随机化单位、流量分层、预期最小效应、试验期限，运行A/A与SRM（样本比例偏差）检查。"
+        },
+        {
+          "name": "Analyze 分析",
+          "question": "某个页面测试失败，到底是设计有误、样本不均还是用户异质性？",
+          "finding": "实验平台能提供更可信的处理效应估计；仍需评估多重检验、设备差异、来源渠道、节假日与取消延迟。",
+          "evidence": [
+            "S4",
+            "S7",
+            "S8"
+          ],
+          "caution": "没有获取内部日志与统计模型，不能声称对任何具体实验完成根因统计检验。",
+          "action": "预先定义主指标及护栏，分拆渠道/设备/地区，核查暴露一致性和生命周期滞后。"
+        },
+        {
+          "name": "Improve 改进",
+          "question": "如何将数据可靠地转化为产品动作？",
+          "finding": "HBS案例重点是组织对证据的使用；公开技术博客显示产品团队可进行受控测试，HBR举例领导层允许挑战既有首页设计。",
+          "evidence": [
+            "S1",
+            "S3",
+            "S4"
+          ],
+          "caution": "某一网页改版的经验不能代表所有产品；业务收益未必大于成本、取消和投诉。",
+          "action": "小流量上线，设定预先决策门槛；价值为正且无明显护栏退化再灰度推广，否则复盘假设。"
+        },
+        {
+          "name": "Control 控制",
+          "question": "如何防止一次成功改版后统计质量和客户体验倒退？",
+          "finding": "持续试验需要指标字典、基础设施质量、组织责任和异常检测；作者强调数据优先也需伦理与管理层授权。",
+          "evidence": [
+            "S7",
+            "S3",
+            "S8"
+          ],
+          "caution": "本研究未获得公司真实控制图、基线控制界限或六西格玛认证材料。",
+          "action": "建立实验登记簿，周审SRM/A/A/投诉/取消、月度复验效果，设回滚负责人和停止阈值。"
+        }
+      ]
+    }
+  }
+}

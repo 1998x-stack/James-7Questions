@@ -72,6 +72,19 @@ class ContractTests(unittest.TestCase):
             self.assertIn('lens-card',overview)
             self.assertIn('`${k}.html`',overview)
 
+    def test_hbs_roadmap_is_separate_from_published_gallery(self):
+        plan=json.loads((ROOT/'research'/'hbs-top20.json').read_text('utf8'))
+        self.assertEqual(len(plan['cases']),20)
+        self.assertEqual(len({x['title'] for x in plan['cases']}),20)
+        self.assertEqual(sum(x['status']=='published' for x in plan['cases']),1)
+        self.assertEqual(plan['cases'][0]['case_id'],'booking-experimentation-2017-2019')
+        html=(ROOT/'docs'/'hbs-roadmap.html').read_text('utf8')
+        import html as html_lib
+        for x in plan['cases']: self.assertIn(html_lib.escape(x['title']),html)
+        gallery=(ROOT/'docs'/'index.html').read_text('utf8')
+        self.assertIn('hbs-roadmap.html',gallery)
+        self.assertIn('booking-experimentation-2017-2019',gallery)
+
     def test_new_case_is_unpublished_draft(self):
         from tempfile import TemporaryDirectory
         sys.path.insert(0, str(ROOT))

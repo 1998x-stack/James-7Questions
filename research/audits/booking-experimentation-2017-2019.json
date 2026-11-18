@@ -1,0 +1,61 @@
+{
+  "case": "booking-experimentation-2017-2019",
+  "stages": [
+    {
+      "skill": "evidence-verification",
+      "status": "structural_pass",
+      "evidence_refs_checked": 56,
+      "nodes_checked": 0,
+      "notes": [
+        "Sources have resolvable IDs and HTTPS syntax; factual accuracy independently checked against publicly cited materials by researcher, not by script.",
+        "HBS original teaching-case text is not reproduced."
+      ]
+    },
+    {
+      "skill": "market-structure",
+      "status": "structural_pass",
+      "evidence_refs_checked": 12,
+      "nodes_checked": 5,
+      "notes": [
+        "Each node has finding, source links, caveat and action; causal strength/managerial decisions need research judgment."
+      ]
+    },
+    {
+      "skill": "socratic-audit",
+      "status": "structural_pass",
+      "evidence_refs_checked": 14,
+      "nodes_checked": 6,
+      "notes": [
+        "Each node has finding, source links, caveat and action; causal strength/managerial decisions need research judgment."
+      ]
+    },
+    {
+      "skill": "james-seven-questions",
+      "status": "structural_pass",
+      "evidence_refs_checked": 18,
+      "nodes_checked": 7,
+      "notes": [
+        "Each node has finding, source links, caveat and action; causal strength/managerial decisions need research judgment."
+      ]
+    },
+    {
+      "skill": "dmaic-execution",
+      "status": "structural_pass",
+      "evidence_refs_checked": 12,
+      "nodes_checked": 5,
+      "notes": [
+        "Each node has finding, source links, caveat and action; causal strength/managerial decisions need research judgment."
+      ]
+    },
+    {
+      "skill": "case-publishing",
+      "status": "structural_pass",
+      "evidence_refs_checked": 0,
+      "nodes_checked": 0,
+      "notes": [
+        "13 files present: overview + 4 HTML + 4 MD + 4 PDF; GitHub Pages remains a separate deployment check."
+      ]
+    }
+  ],
+  "disclosure": "Structural checks only; sources and causal claims still require human review."
+}
