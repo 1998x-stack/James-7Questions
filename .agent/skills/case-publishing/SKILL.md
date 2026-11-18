@@ -23,7 +23,8 @@ description: Create, validate, and publish four HTML + four Markdown + four PDF 
 
 ## Required output
 
-每新增一例必须交付4 HTML、4 MD、4 PDF；输出不得隐藏反证和引用；索引自动增加。
+每新增一例必须交付案例独立总览 index.html、4 框架 HTML、4 MD、4 PDF；输出不得隐藏反证和引用；Gallery 索引自动增加。
+导航契约：Gallery 卡片 → `cases/<slug>/index.html` → 该案例的四方法页；方法页必须能返回该案例，不能硬编码跳到首个案例。
 
 每个结论输出 claim / evidence / scope / inference / counterevidence / uncertainty / decision_impact，并与案例的四种框架字段同步。先检查 `cases/<slug>/case.json`，后运行 `python src/build.py`。不允许捏造市场规模、竞争份额、模型实证或会议记录。
 
@@ -45,4 +46,4 @@ description: Create, validate, and publish four HTML + four Markdown + four PDF 
 1. 所有引用存在，所有阶段有局限与下一动作。
 2. 不将方法论的研究重建冒充历史原始制度。
 3. `python -m unittest discover -s tests` 通过。
-4. `python src/build.py` 生成四套互相一致的HTML、Markdown和PDF。
+4. `python src/build.py` 生成案例总览与四套互相一致的HTML、Markdown和PDF，运行 `python tools/check_gallery.py` 验证画廊导航及移动布局。

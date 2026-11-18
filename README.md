@@ -1,6 +1,6 @@
 # James 7Questions · Decision Atlas
 
-> 面向企业经营管理者的可扩展、可追溯战略分析平台。**一份案例数据 → 波特五力、苏格拉底式追问、James 七连问、DMAIC 四套框架 → 4 HTML + 4 Markdown + 4 PDF。**
+> 面向企业经营管理者的可扩展、可追溯战略分析平台。**一份案例数据 → 案例 Gallery + 独立案例总览 → 波特五力、苏格拉底式追问、James 七连问、DMAIC 四套框架 → 4 HTML + 4 Markdown + 4 PDF。**
 
 ![Production](https://img.shields.io/badge/architecture-static%20first-244b74) ![Output](https://img.shields.io/badge/artifacts-4%20HTML%20%2B%204%20MD%20%2B%204%20PDF-2a6c5f)
 
@@ -28,7 +28,7 @@
 - **工程实践：** 叶亚明演讲整理披露集中式无线开发向16个业务团队分担移动职责的调整，移动支付成功率一年提升约10个百分点。请注意演讲转述属性及缺少原始实验数据的局限。
 - **归因约束：** 数据支持渠道转型发生，不足以精确分解智能手机普及、市场推广和组织重构的独立贡献。
 
-打开 `docs/index.html` 或 `docs/cases/ctrip-mobile-2012-2015/james.html` 即可浏览独立 HTML，**无需服务器或网络依赖**（点击来源链接才需要网络）。
+打开 `docs/index.html`，点击案例卡片进入 `docs/cases/ctrip-mobile-2012-2015/index.html`，再选择 `james.html` 等分析方法 即可浏览独立 HTML，**无需服务器或网络依赖**（点击来源链接才需要网络）。
 
 ## 新增正式研究案例：美团的“百团大战 / 千团大战”（2010—2015）
 
@@ -63,8 +63,9 @@ James-7Questions/
 ├── tests/                       # 结构、输出及引用验证
 ├── .github/workflows/pages.yml  # GitHub Pages + CI
 ├── docs/                        # 静态Pages产物
-│   ├── index.html               # 自动化案例库
+│   ├── index.html               # Gallery：可搜索的案例卡片入口
 │   └── cases/<slug>/
+│       ├── index.html           # 每个案例独立总览页：判断、指标、四框架入口、证据
 │       ├── porter.html, socratic.html, james.html, dmaic.html
 │       └── downloads/
 │           ├── porter.md/.pdf
@@ -115,7 +116,7 @@ python -m http.server 8000 --directory docs
 
 不再使用高对比霓虹、复杂背景或堆砌图案的“技术演示型”仪表盘，改为偏咨询公司研究台的**浅色、严肃、结构化**设计：
 
-- 左侧常驻框架导航；上方明确当前案例；中部四张关键财务/渠道指标卡；主区左右分栏展示分析图和“证据与决策工作卡”。
+- 首页优先展示 Gallery 和可搜索筛选的独立案例卡片；点击卡片进入案例专属 Overview，提供战略判断、关键指标和四套框架入口；研究内页左侧为案例导航；中部关键指标卡；主区左右分栏展示分析图和“证据与决策工作卡”。
 - 五力采用辐射图、苏格拉底为论证阶梯、七连问为阶段流、DMAIC为环形循环；交互节点均支持键盘和鼠标。
 - 每步展示问题、观察、局限、行动、证据链接；按管理者“判断—证据—行动”阅读顺序布局。
 - 在 <=750px 宽屏幕下变为纵向页面；支持打印、四套Markdown/PDF下载。
@@ -139,3 +140,12 @@ python -m http.server 8000 --directory docs
 ## 许可证与内容说明
 
 源代码 MIT；第三方报告由各版权人持有，本仓库只保留少量必要事实性摘要与原文链接，不重新发布第三方全文。研究内容不构成投资、法律或经营保证。
+
+## 案例画廊与导航体验
+
+首页 `docs/index.html` 现在是 **Case Gallery**，不是四个框架的快捷入口。卡片默认跳到 `docs/cases/<slug>/index.html`，该总览页展示战略命题、关键指标、证据与时间线、四套分析框架入口及 MD/PDF 下载。四个框架页面有返回案例总览的稳定入口。
+
+- 案例卡片在桌面端为两列，移动端单列，使用内置 SVG/CSS 抽象插画；无外部图片依赖。
+- 搜索和行业筛选只展示符合条件的案例，空结果会给出提示。
+- 新增案例仅需修改案例 JSON；生成器自动创建独立 `index.html`，无需维护路由表。
+- 可运行 `python tools/check_gallery.py` 做浏览器交互和布局冒烟检查（需 Chromium 与 Playwright）。

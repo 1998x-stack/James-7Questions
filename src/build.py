@@ -39,13 +39,13 @@ def write(path,content):
     path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(content,encoding='utf-8')
 
-def html_document(case, method, case_index, css, js, library=False):
-    tag='首页 - 决策研究工作台' if library else f'{METHODS[method]} - {case["company"]}'
+def html_document(case, method, case_index, css, js, library=False, overview=False):
+    tag='案例画廊 - Decision Atlas' if library else (f'{case["title"]} - 案例总览' if overview else f'{METHODS[method]} - {case["company"]}')
     data=json.dumps(case,ensure_ascii=False).replace('</','<\\/')
     index=json.dumps(case_index,ensure_ascii=False).replace('</','<\\/')
     base='./' if library else './'
     css_extra=''
-    return f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{html.escape(case['abstract'],quote=True)}"><meta name="color-scheme" content="light"><title>{html.escape(tag)}</title><style>{css}\n{css_extra}</style></head><body><div id="app"></div><script>window.CASE_DATA={data};window.CASE_INDEX={index};window.METHOD={json.dumps(method)};window.PAGE_MODE={json.dumps('library' if library else 'framework')};window.BASE_PATH={json.dumps(base)};</script><script>{js}</script></body></html>'''
+    return f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{html.escape(case['abstract'],quote=True)}"><meta name="color-scheme" content="light"><title>{html.escape(tag)}</title><style>{css}\n{css_extra}</style></head><body><div id="app"></div><script>window.CASE_DATA={data};window.CASE_INDEX={index};window.METHOD={json.dumps(method)};window.PAGE_MODE={json.dumps('library' if library else ('overview' if overview else 'framework'))};window.BASE_PATH={json.dumps(base)};</script><script>{js}</script></body></html>'''
 
 def markdown_report(case, method):
     f=case['frameworks'][method];source={s['id']:s for s in case['sources']}
@@ -130,11 +130,12 @@ def main():
     write(DOCS/'index.html',html_document(cases[0],'porter',index,css,js,True))
     for case in cases:
         slug=case['id'];folder=DOCS/'cases'/slug
+        write(folder/'index.html',html_document(case,'porter',index,css,js,overview=True))
         for method in METHODS:
             write(folder/f'{method}.html',html_document(case,method,index,css,js))
             write(folder/'downloads'/f'{method}.md',markdown_report(case,method))
             if not args.no_pdf:pdf_report(case,method,folder/'downloads'/f'{method}.pdf')
         write(folder/'metadata.json',json.dumps({k:case[k] for k in ['id','title','period','industry','status','caveat']},ensure_ascii=False,indent=2)+'\n')
     write(DOCS/'.nojekyll','')
-    print(f'Generated {len(cases)} case(s), {len(cases)*4} framework HTML, {len(cases)*4} Markdown, '+('0' if args.no_pdf else str(len(cases)*4))+' PDF')
+    print(f'Generated {len(cases)} case(s), {len(cases)} case-overview HTML, {len(cases)*4} framework HTML, {len(cases)*4} Markdown, '+('0' if args.no_pdf else str(len(cases)*4))+' PDF')
 if __name__=='__main__':main()

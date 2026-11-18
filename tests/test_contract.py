@@ -18,6 +18,9 @@ class ContractTests(unittest.TestCase):
         for case in build.load_cases():
             slug=case['id']
             for method in build.METHODS:
+                overview=ROOT/'docs'/'cases'/slug/'index.html'
+                self.assertTrue(overview.is_file(),str(overview))
+                self.assertIn('window.PAGE_MODE="overview"',overview.read_text('utf-8'))
                 for ext in ('html','md','pdf'):
                     p=ROOT/'docs'/'cases'/slug/(f'{method}.{ext}' if ext=='html' else f'downloads/{method}.{ext}')
                     self.assertTrue(p.is_file(),str(p))
@@ -54,6 +57,20 @@ class ContractTests(unittest.TestCase):
                         self.assertNotIn(other['title'],md)
         index=(ROOT/'docs'/'index.html').read_text('utf-8')
         for case in cases:self.assertIn(case['title'],index)
+
+    def test_gallery_navigation_contract(self):
+        index=(ROOT/'docs'/'index.html').read_text('utf-8')
+        self.assertIn('window.PAGE_MODE="library"',index)
+        self.assertIn('renderOverview',index)
+        for case in build.load_cases():
+            slug=case['id']
+            self.assertIn(slug,index)
+            overview=(ROOT/'docs'/'cases'/slug/'index.html').read_text('utf-8')
+            self.assertIn(case['title'],overview)
+            self.assertIn('renderOverview',overview)
+            self.assertIn('index.html',overview)
+            self.assertIn('lens-card',overview)
+            self.assertIn('`${k}.html`',overview)
 
     def test_new_case_is_unpublished_draft(self):
         from tempfile import TemporaryDirectory

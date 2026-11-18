@@ -2,7 +2,7 @@
 
 ## Objective
 
-Maintain a scalable evidence-first executive research atlas. Start every new company with `python tools/new_case.py`, which creates a non-publishable `draft.case.json` until research approval. Every case becomes exactly 4 framework HTML, 4 Markdown, and 4 PDF artifacts, all generated from versioned case data. Never hand-edit generated deliverables as the source of truth.
+Maintain a scalable evidence-first executive research atlas. Every case becomes 1 case-overview HTML, 4 framework HTML, 4 Markdown, and 4 PDF artifacts, all generated from versioned case data. Never hand-edit generated deliverables as the source of truth.
 
 ## Agent discovery
 
@@ -19,7 +19,7 @@ Maintain a scalable evidence-first executive research atlas. Start every new com
 3. **Evidence ledger**: for every numerical claim record denominator, numerator, accounting treatment, seasonality, and whether it refers to peak/quarter/year.
 4. **Four methods**: Porter(5), Socratic(6), James(7), DMAIC(5). Each node requires question, finding, evidence IDs, caution, action.
 5. **Critic pass**: write rival hypotheses and possible disconfirming observations. Flag correlation vs causation and reported vs reconstructed processes.
-6. **Publish**: run `python src/build.py` and tests; inspect all 12 artifacts for the new case.
+6. **Publish**: run `python src/build.py` and tests; inspect the 1 overview and all 12 research artifacts for the new case.
 7. **Review**: release only after human review of research significance, source quality, and sensitive-information clearance.
 
 ## Non-negotiable rules
@@ -41,11 +41,12 @@ Maintain a scalable evidence-first executive research atlas. Start every new com
 Generated canonical paths:
 
 ```
+docs/cases/<slug>/index.html
 docs/cases/<slug>/{porter,socratic,james,dmaic}.html
 docs/cases/<slug>/downloads/{porter,socratic,james,dmaic}.{md,pdf}
 ```
 
-`docs/index.html` is auto-generated from all cases; no external frontend dependency.
+`docs/index.html` is a Gallery auto-generated from all cases. Every case card routes to its own `cases/<slug>/index.html`; framework links must remain relative to the same case. No external frontend dependency.
 
 ## Quality gate
 
@@ -65,3 +66,7 @@ Visual gate: desktop 1440px, tablet 900px, mobile 390px; test keyboard Enter/Spa
 - 12 artifact paths for every case.
 - Pages URL and check status **only when verified**.
 - Remaining issues and specific next research candidates.
+
+## Navigation contract
+
+Always preserve Gallery → Case Overview → Framework pages, with back-links at every level. Never point a gallery card directly to `james.html` or hardcode method navigation to the first case. Modify `src/build.py`, `src/ui.js`, and `src/ui.css` as source of truth, then rebuild all HTML from case JSON. Run `python tools/check_gallery.py` and unit tests before publishing.
